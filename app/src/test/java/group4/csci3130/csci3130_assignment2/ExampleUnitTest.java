@@ -21,16 +21,17 @@ public class ExampleUnitTest {
 
     @Test
     public void passwordTest1() {
+        // space is a special character so it will pass that test
         System.out.println("Testing hello World");
         Validator password1 = new Validator("hello world");
-        assertEquals(2, password1.validatePassword());
+        assertEquals(3, password1.validatePassword());
     }
 
     @Test
     public void password7CharacterTest() {
         System.out.println("Testing 6chars");
         Validator password1 = new Validator("6chars");
-        assertEquals(1, password1.validatePassword());
+        assertEquals(2, password1.validatePassword());
     }
 
     @Test
@@ -38,6 +39,20 @@ public class ExampleUnitTest {
         System.out.println("Testing password");
         Validator password1 = new Validator("password");
         assertEquals(1, password1.validatePassword());
+    }
+
+    @Test
+    public void passwordContainsSpecialCharacters() {
+        System.out.println("Testing specialChar!");
+        Validator password1 = new Validator("specialChar!");
+        assertEquals(4, password1.validatePassword());
+    }
+
+    @Test
+    public void verySecurePassword() {
+        System.out.println("Testing VerySecurePassword123@@@");
+        Validator password1 = new Validator("VerySecurePassword123@@@");
+        assertEquals(5, password1.validatePassword());
     }
 
 }
