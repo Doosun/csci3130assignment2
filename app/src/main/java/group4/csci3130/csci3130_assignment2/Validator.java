@@ -47,7 +47,7 @@ public class Validator {
     }
 
     private boolean checkIfNotPassword() {
-        return (! password.equals("password"));
+        return (! password.equalsIgnoreCase("password"));
     }
 
     private boolean containsNumbers() {
