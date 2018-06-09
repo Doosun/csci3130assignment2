@@ -18,23 +18,26 @@ public class ExampleUnitTest {
         Validator password1 = new Validator();
     }*/
 
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
+
     @Test
     public void passwordTest1() {
+        System.out.println("Testing hello World");
         Validator password1 = new Validator("hello world");
+        assertEquals(2, password1.validatePassword());
     }
 
     @Test
     public void password7CharacterTest() {
-        Validator password1 = new Validator("passwor");
+        System.out.println("Testing 6chars");
+        Validator password1 = new Validator("6chars");
+        assertEquals(1, password1.validatePassword());
     }
 
     @Test
     public void passwordIsNotPasswordCaseInsensitiveTest() {
+        System.out.println("Testing password");
         Validator password1 = new Validator("password");
+        assertEquals(1, password1.validatePassword());
     }
 
 }
